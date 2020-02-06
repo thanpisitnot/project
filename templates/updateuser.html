@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>SB Admin 2 - Blank</title>
+
+  <!-- Custom fonts for this template-->
+
+  {% block headjs %}
+  {% include "base/headjs.html" %}
+  {% endblock %}
+
+
+</head>
+
+<body id="page-top">
+
+  <!-- Page Wrapper -->
+  <div id="wrapper">
+
+    <!-- Sidebar -->
+    {% block Sidebar %}
+    {% include "base/sidebar.html" %}
+    {% endblock %}
+    <!-- End of Sidebar -->
+
+    <!-- Content Wrapper -->
+    <div id="content-wrapper" class="d-flex flex-column">
+
+      <!-- Main Content -->
+      <div id="content">
+
+        <!-- Topbar -->
+        {% block navbar %}
+        {% include "base/navbar.html" %}
+        {% endblock %}
+        <!-- End of Topbar -->
+
+
+
+
+        <!-- Begin Page Content -->
+        <div class="container-fluid">
+
+          <!-- Page Heading -->
+          <h1 class="h3 mb-4 text-gray-800"> Update User</h1>
+
+        </div>
+        <!-- /.container-fluid -->
+        <div class="row">
+          <div class="col-lg-1">
+          </div>
+          <div class="col-lg-10">
+            <div class="card shadow mb-4">
+              <div class="card-header py-3">
+                <h6 class="m-0 font-weight-bold text-primary">update</h6>
+              </div>
+                <form class="insert" action="{{link}}" method="post">
+                  <div class="card-body">
+                         <div class="row">
+                           <div class="col-lg-3">
+                               <input type="iduser" class="form-control form-control-user" name ="iduser" value="{{ data['ID'] }}" placeholder="ID  ">
+                           </div>
+                         </div>
+                         <br>
+                             <div class="row">
+                                 <div class="col-lg-3">
+                                     <input type="name" class="form-control form-control-user" name ="name" value="{{ data['NAME'] }}" placeholder="Name">
+                                 </div>
+                             </div>
+                         <br>
+                             <div class="row">
+                                 <div class="col-lg-3">
+                                     <input type="surname" class="form-control form-control-user" name ="surname" value="{{ data['SURNAME'] }}" placeholder="Surname">
+                                 </div>
+                              </div>
+                         <br>
+                             <div class="row">
+                                 <div class="col-lg-3">
+                                     <input type="active" class="form-control form-control-user" name ="active" value="{{ data['ACTIVE'] }}" readonly placeholder="Active">
+                                 </div>
+                             </div>
+                         <br>
+                             <div class="row">
+                                 <div class="col-lg-3">
+                                     <input type="usern" class="form-control form-control-user" name ="usern" value="{{ data['USERNAME'] }}" placeholder="Username">
+                                 </div>
+                             </div>
+                         <br>
+                             <div class="row">
+                                 <div class="col-lg-3">
+                                     <input type="address" class="form-control form-control-user" name ="address" value="{{ data['ADDRESS'] }}" placeholder="Address">
+                                 </div>
+                             </div>
+                         <br>
+                             <div class="row">
+                                 <div class="col-lg-3">
+                                     <input type="depart" class="form-control form-control-user" name ="depart" value="{{ data['DEPART'] }}"  placeholder="Depart">
+                                 </div>
+                             </div>
+                         <br>
+                             <div class="row">
+                                <div class="col-lg-3">
+                                  <input type="submit" class="btn btn-primary btn-user btn-block" value="Summit">
+                                </div>
+                            </div>
+                      </div>
+
+                </form>
+          </div>
+        </div>
+        <div class="col-lg-1">
+        </div>
+      </div>
+      <!-- End of Main Content -->
+
+
+
+
+
+
+
+
+      <!-- Footer -->
+      <footer class="sticky-footer bg-white">
+        <div class="container my-auto">
+          <div class="copyright text-center my-auto">
+            <span>Copyright &copy; Your Website 2019</span>
+          </div>
+        </div>
+      </footer>
+      <!-- End of Footer -->
+
+    </div>
+    <!-- End of Content Wrapper -->
+
+  </div>
+  <!-- End of Page Wrapper -->
+
+  <!-- Scroll to Top Button-->
+  <a class="scroll-to-top rounded" href="#page-top">
+    <i class="fas fa-angle-up"></i>
+  </a>
+
+
+
+
+
+  <!-- Logout Modal-->
+  {% block logout %}
+  {% include "base/logout.html" %}
+  {% endblock %}
+
+  <!-- Bootstrap core JavaScript-->
+  {% block endjs %}
+  {% include "base/endjs.html" %}
+  {% endblock %}
+
+</body>
+
+</html>
