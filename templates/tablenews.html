@@ -9,7 +9,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>SB Admin 2 - Blank</title>
+  <title>MLSS - Table News</title>
 
   <!-- Custom fonts for this template-->
 
@@ -27,9 +27,15 @@
 
     <!-- Sidebar -->
 
-    {% block Sidebar %}
-    {% include "base/sidebar.html" %}
-    {% endblock %}
+    {% if usertype=='Admin' %}
+        {% block Sidebar1 %}
+        {% include "base/sidebar.html" %}
+        {% endblock %}
+    {% else %}
+        {% block Sidebar2 %}
+        {% include "base/sidebaruser.html" %}
+        {% endblock %}
+    {% endif %}
     <!-- End of Sidebar -->
 
     <!-- Content Wrapper -->
@@ -96,7 +102,7 @@
                       <td> {{ row[11] }}</td>
                       <td> {{ row[12] }}</td>
                       <td>
-                           <a href="/nnews/{{ row[0] }}" class="btn btn-primary btn-circle btn-sm">
+                           <a href="/nnews/{{ row[0] }}" class="btn btn-info btn-circle btn-sm">
                             <i class="fas fa-info-circle"></i>
                            </a>
 

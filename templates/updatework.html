@@ -9,7 +9,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>SB Admin 2 - Blank</title>
+  <title>MLSS - Update Working</title>
 
   <!-- Custom fonts for this template-->
 
@@ -26,9 +26,15 @@
   <div id="wrapper">
 
     <!-- Sidebar -->
-    {% block Sidebar %}
-    {% include "base/sidebaruser.html" %}
-    {% endblock %}
+    {% if usertype=='Admin' %}
+        {% block Sidebar1 %}
+        {% include "base/sidebar.html" %}
+        {% endblock %}
+    {% else %}
+        {% block Sidebar2 %}
+        {% include "base/sidebaruser.html" %}
+        {% endblock %}
+    {% endif %}
     <!-- End of Sidebar -->
 
     <!-- Content Wrapper -->
@@ -65,37 +71,37 @@
                 <form class="insert" action="{{link}}" method="post">
                   <div class="card-body">
                          <div class="row">
-                           <div class="col-lg-3">
+                           <div class="col-lg-4">
                                <input type="idrow" class="form-control form-control-user" name ="idrow" value="{{ data['ID_ROW'] }}"  readonly placeholder="ID Row ">
                            </div>
                          </div>
                          <br>
                              <div class="row">
-                                 <div class="col-lg-3">
+                                 <div class="col-lg-4">
                                      <input type="idem" class="form-control form-control-user" name ="idem" value="{{ data['ID_EMPLOYEE'] }}" placeholder="ID Employee">
                                  </div>
                              </div>
                          <br>
                              <div class="row">
-                                 <div class="col-lg-3">
+                                 <div class="col-lg-4">
                                      <input type="datetime-local" class="form-control form-control-user" name ="start" value="{{ data['STARTTIME'] }}" placeholder="Start Time">
                                  </div>
                               </div>
                          <br>
                              <div class="row">
-                                 <div class="col-lg-3">
+                                 <div class="col-lg-4">
                                      <input type="datetime-local" class="form-control form-control-user" name ="end" value="{{ data['ENDTIME'] }}" placeholder="End Time">
                                  </div>
                              </div>
                          <br>
                              <div class="row">
-                                 <div class="col-lg-3">
+                                 <div class="col-lg-4">
                                      <input type="username" class="form-control form-control-user" name ="username" value="{{ data['USERNAME'] }}" readonly placeholder="User Name">
                                  </div>
                              </div>
                          <br>
                              <div class="row">
-                                <div class="col-lg-3">
+                                <div class="col-lg-4">
                                   <input type="submit" class="btn btn-primary btn-user btn-block" value="Summit">
                                 </div>
                             </div>

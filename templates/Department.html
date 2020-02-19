@@ -9,7 +9,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>SB Admin 2 - Blank</title>
+  <title>MLSS - Department</title>
 
   <!-- Custom fonts for this template-->
 
@@ -142,6 +142,13 @@
   {% include "base/endjs.html" %}
   {% endblock %}
 
+<script>
+  $('#dataTable').dataTable( {
+  "columnDefs": [
+    { "width": "50%", "targets": 0},{ "width": "50%", "targets": 1}
+  ]
+} );
+</script>
 
 </body>
 

@@ -9,7 +9,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>SB Admin 2 - Blank</title>
+  <title>MLSS - News</title>
 
   <!-- Custom fonts for this template-->
 
@@ -26,9 +26,15 @@
   <div id="wrapper">
 
     <!-- Sidebar -->
-    {% block Sidebar %}
-    {% include "base/sidebaruser.html" %}
-    {% endblock %}
+    {% if usertype=='Admin' %}
+        {% block Sidebar1 %}
+        {% include "base/sidebar.html" %}
+        {% endblock %}
+    {% else %}
+        {% block Sidebar2 %}
+        {% include "base/sidebaruser.html" %}
+        {% endblock %}
+    {% endif %}
     <!-- End of Sidebar -->
 
     <!-- Content Wrapper -->

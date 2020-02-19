@@ -9,7 +9,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>MLSS - List User</title>
+  <title>MLSS - Work</title>
 
   <!-- Custom fonts for this template-->
 
@@ -27,9 +27,15 @@
 
     <!-- Sidebar -->
 
-    {% block Sidebar %}
-    {% include "base/sidebar.html" %}
-    {% endblock %}
+    {% if usertype=='Admin' %}
+        {% block Sidebar1 %}
+        {% include "base/sidebar.html" %}
+        {% endblock %}
+    {% else %}
+        {% block Sidebar2 %}
+        {% include "base/sidebaruser.html" %}
+        {% endblock %}
+    {% endif %}
     <!-- End of Sidebar -->
 
     <!-- Content Wrapper -->
@@ -51,38 +57,32 @@
         <div class="container-fluid">
 
           <!-- Page Heading -->
-          <h1 class="h3 mb-4 text-gray-800">List User</h1>
+          <h1 class="h3 mb-4 text-gray-800">Working</h1>
 
   <!-- DataTales Example -->
           <div class="card shadow mb-4">
             <div class="card-header py-3">
-              <h6 class="m-0 font-weight-bold text-primary"></h6>
+              <h6 class="m-0 font-weight-bold text-primary"> </h6>
             </div>
             <div class="card-body">
               <div class="table-responsive">
                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                   <thead>
                     <tr>
-                      <th>ID</th>
-                      <th>Name</th>
-                      <th>Surname</th>
-                      <th>Active</th>
-                      <th>Username</th>
-                      <th>Address</th>
-                      <th>Depart</th>
-                      <th></th>
+                      <th>ID Row</th>
+                      <th>ID Employee</th>
+                      <th>Starttime</th>
+                      <th>Endtime</th>
+<!--                      <th></th>-->
                     </tr>
                   </thead>
                    <tfoot>
                     <tr>
-                      <th>ID</th>
-                      <th>Name</th>
-                      <th>Surname</th>
-                      <th>Active</th>
-                      <th>Username</th>
-                      <th>Address</th>
-                      <th>Depart</th>
-                      <th></th>
+                       <th>ID Row</th>
+                      <th>ID Employee</th>
+                      <th>Starttime</th>
+                      <th>Endtime</th>
+<!--                      <th></th>-->
                     </tr>
                   </tfoot>
                   <tbody>
@@ -92,19 +92,12 @@
                       <td> {{ row[1] }}</td>
                       <td> {{ row[2] }}</td>
                       <td> {{ row[3] }}</td>
-                      <td> {{ row[4] }}</td>
-                      <td> {{ row[5] }}</td>
-                      <td> {{ row[6] }}</td>
-                      <td> <a href="/active/{{ row[4] }}" class="btn btn-success btn-circle  btn-sm">
-                              <i class="fas fa-check"></i>
-                           </a>
-                           <a href="/userdetail/{{ row[0] }}" class="btn btn-info btn-circle btn-sm">
-                            <i class="fas fa-info-circle"></i>
-                           </a>
-                           <a href="/inactive/{{ row[4] }}" class="btn btn-danger btn-circle btn-sm">
-                            <i class="fas fa-trash"></i>
-                           </a>
-                       </td>
+<!--                      <td>-->
+<!--                           <a href="//{{ row[0] }}" class="btn btn-info btn-circle btn-sm">-->
+<!--                            <i class="fas fa-info-circle"></i>-->
+<!--                           </a>-->
+
+<!--                      </td>-->
                     </tr>
                   {% endfor %}
                   </tbody>
