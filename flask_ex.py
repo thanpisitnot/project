@@ -13,10 +13,7 @@ app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 app.secret_key = '1234'
 cors = CORS(app, resources={r"/api/*": {"origins": "*"}})
 
-USER = 'tkivieemee'
-PASS = 'mee0886203137'
-# USER = 'tkivieemee2'
-# PASS = 'mee0886203137'
+
 DB_URL = '10.10.100.65:1521/usfm'
 
 
