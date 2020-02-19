@@ -17,7 +17,6 @@ USER = 'tkivieemee'
 PASS = 'mee0886203137'
 # USER = 'tkivieemee2'
 # PASS = 'mee0886203137'
-# DB_URL = '203.158.131.65:1521/usfm'
 DB_URL = '10.10.100.65:1521/usfm'
 
 
