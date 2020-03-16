@@ -27,9 +27,15 @@
   <div id="wrapper">
 
     <!-- Sidebar -->
-    {% block Sidebar %}
-    {% include "base/sidebar.html" %}
-    {% endblock %}
+    {% if usertype=='Admin' %}
+        {% block Sidebar1 %}
+        {% include "base/sidebar.html" %}
+        {% endblock %}
+    {% else %}
+        {% block Sidebar2 %}
+        {% include "base/sidebaruser.html" %}
+        {% endblock %}
+    {% endif %}
     <!-- End of Sidebar -->
 
     <!-- Content Wrapper -->
@@ -39,9 +45,15 @@
       <div id="content">
 
         <!-- Topbar -->
-        {% block navbar %}
-        {% include "base/navbar.html" %}
-        {% endblock %}
+        {% if usertype == 'Admin' %}
+          {% block navbara %}
+          {% include "base/navbara.html" %}
+          {% endblock %}
+        {% else %}
+          {% block navbar%}
+          {% include "base/navbar.html" %}
+          {% endblock %}
+        {% endif %}
         <!-- End of Topbar -->
 
 
@@ -61,20 +73,20 @@
           <div class="col-lg-10">
             <div class="card shadow mb-4">
               <div class="card-header py-3">
-                <h6 class="m-0 font-weight-bold text-primary">UserxType</h6>
+                <h6 class="m-0 font-weight-bold text-primary"></h6>
               </div>
                 <form class="insert" action="insertuxtp" method="post">
                   <div class="card-body">
                       <div class="row">
                           <div class="col-lg-2">
-                              UserType :
+                              User Type :
                           </div>
                               <div class="col-lg-0">
                                 <div class="dropdown">
                                   <select class="form-control" name="userx">
-                                      <option value="3">High</option>
-                                      <option value="2">Normal</option>
                                       <option value="1">Low</option>
+                                      <option value="2">Normal</option>
+                                      <option value="3">High</option>
                                   </select>
                                 </div>
                               </div>
@@ -87,9 +99,10 @@
                               <div class="col-lg-0">
                                 <div class="drowdown">
                                   <select class="form-control" name="typex">
-                                      <option value="1">ด่วน</option>
-                                      <option value="2">ด่วนมาก</option>
-                                      <option value="3">ปกติ</option>
+<!--                                      <option value="">เลือก</option>-->
+                                      <option value="1">ปกติ</option>
+                                      <option value="2">ด่วน</option>
+                                      <option value="3">ด่วนมาก</option>
                                   </select>
                                 </div>
                               </div>
@@ -97,7 +110,7 @@
                          <br>
                              <div class="row">
                                 <div class="col-lg-3">
-                                  <input type="submit" class="btn btn-info btn-user btn-block" value="Summit">
+                                  <input type="submit" class="btn btn-info btn-user btn-block" value="Submit">
                                 </div>
                             </div>
                       </div>

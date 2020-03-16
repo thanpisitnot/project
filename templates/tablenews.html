@@ -45,9 +45,15 @@
       <div id="content">
 
         <!-- Topbar -->
-        {% block navbar %}
-        {% include "base/navbar.html" %}
-        {% endblock %}
+        {% if usertype == 'Admin' %}
+          {% block navbara %}
+          {% include "base/navbara.html" %}
+          {% endblock %}
+        {% else %}
+          {% block navbar%}
+          {% include "base/navbar.html" %}
+          {% endblock %}
+        {% endif %}
         <!-- End of Topbar -->
 
 
@@ -66,16 +72,17 @@
             </div>
             <div class="card-body">
               <div class="table-responsive">
-                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                <table class="table table-bordered" id="dataTable2" width="100%" cellspacing="0">
                   <thead>
                     <tr>
                       <th>ID</th>
                       <th>Topic</th>
-                      <th>Datenews</th>
-                      <th>Active</th>
-                      <th>Username</th>
+                      <th>Date</th>
+                      <th>Name</th>
+<!--                      <th>Active</th>-->
+<!--                      <th>Username</th>-->
                       <th>Depart</th>
-                      <th>Type_Name</th>
+                      <th>News Type</th>
                       <th></th>
                     </tr>
                   </thead>
@@ -83,11 +90,12 @@
                     <tr>
                       <th>ID</th>
                       <th>Topic</th>
-                      <th>Datenews</th>
-                      <th>Active</th>
-                      <th>Username</th>
+                      <th>Date</th>
+                      <th>Name</th>
+<!--                      <th>Active</th>-->
+<!--                      <th>Username</th>-->
                       <th>Depart</th>
-                      <th>Type_Name</th>
+                      <th>News Type</th>
                       <th></th>
                     </tr>
                   </tfoot>
@@ -97,15 +105,20 @@
                       <td> {{ row[0] }}</td>
                       <td> {{ row[1] }}</td>
                       <td> {{ row[3] }}</td>
-                      <td> {{ row[8] }}</td>
-                      <td> {{ row[9] }}</td>
+                      <td> {{ row[6] }}</td>
+<!--                      <td> {{ row[8] }}</td>-->
+<!--                      <td> {{ row[9] }}</td>-->
                       <td> {{ row[11] }}</td>
                       <td> {{ row[12] }}</td>
                       <td>
-                           <a href="/nnews/{{ row[0] }}" class="btn btn-info btn-circle btn-sm">
-                            <i class="fas fa-info-circle"></i>
+                           <a href="/nnews/{{ row[0] }}" class="btn btn-outline-info">
+                            <span>Details</span>
                            </a>
-
+                          {% if usertype=='Admin' %}<a href="/deletenews/{{ row[0] }}" class="btn btn-outline-danger">
+                            <span>Delete</span>
+                          {% else %}
+                          {% endif %}
+                           </a>
                       </td>
                     </tr>
                   {% endfor %}
@@ -171,6 +184,16 @@
   {% include "base/endjs.html" %}
   {% endblock %}
 
+<script>
+$(document).ready(function() {
+  $('#dataTable2').DataTable( {
+        "scrollY":        "500px",
+        "scrollCollapse": true,
+        "paging":         false,
+        "order": []
+   });
+});
+</script>
 
 </body>
 

@@ -38,8 +38,8 @@
       <div id="content">
 
         <!-- Topbar -->
-        {% block navbar %}
-        {% include "base/navbar.html" %}
+        {% block navbara %}
+        {% include "base/navbara.html" %}
         {% endblock %}
         <!-- End of Topbar -->
 
@@ -60,7 +60,7 @@
           <div class="col-lg-10">
             <div class="card shadow mb-4">
               <div class="card-header py-3">
-                <h6 class="m-0 font-weight-bold text-primary">insert</h6>
+                <h6 class="m-0 font-weight-bold text-primary"></h6>
               </div>
                 <form class="insert" action="insertcompenp" method="post">
                   <div class="card-body">
@@ -70,38 +70,52 @@
 <!--                           </div>-->
 <!--                         </div>-->
                              <div class="row">
+                                 <div class="col-lg-2">Salary :</div>
                                  <div class="col-lg-3">
-                                     <input type="salary" class="form-control form-control-user" name ="salary"  placeholder="Salary">
+                                     <input type="salary" class="form-control form-control-user" name ="salary"  placeholder="Salary"required>
                                  </div>
                              </div>
                          <br>
                              <div class="row">
+                                 <div class="col-lg-2">Compensation :</div>
                                  <div class="col-lg-3">
-                                     <input type="remuneration" class="form-control form-control-user" name ="remuneration"  placeholder="Remuneration">
+                                     <input type="remuneration" class="form-control form-control-user" name ="remuneration"  placeholder="Compensation"required>
                                  </div>
                               </div>
                          <br>
                              <div class="row">
+                                 <div class="col-lg-2">Date :</div>
                                  <div class="col-lg-3">
-                                     <input type="date" class="form-control form-control-user" name ="datecompen"  placeholder="Datecompen">
+                                     <input type="date" class="form-control form-control-user" name ="datecompen"  placeholder="Datecompen"required>
                                  </div>
                              </div>
                          <br>
                              <div class="row">
+                                  <div class="col-lg-2">WorkHours :</div>
                                  <div class="col-lg-3">
-                                     <input type="work" class="form-control form-control-user" name ="workhours"  placeholder="work hours">
+                                     <input type="work" class="form-control form-control-user" name ="workhours"  placeholder="work hours"required>
                                  </div>
                              </div>
                          <br>
                              <div class="row">
+                                  <div class="col-lg-2">Name :</div>
                                  <div class="col-lg-3">
-                                     <input type="iduser" class="form-control form-control-user" name ="iduser"  placeholder="ID User">
+                                      <div class="dropdown">
+                                          <select class="form-control" name="iduser">
+                                             <option value="U10">ธัญพิสิษฐ์</option>
+                                             <option value="U04">ณัฐพล</option>
+                                             <option value="U03">ธนวัตน์</option>
+                                              <option value="U02">ศศิธร</option>
+                                          </select>
+                                      </div>
+
+<!--                                     <input type="hidden" class="form-control form-control-user" name ="iduser"  placeholder="ID User"required>-->
                                  </div>
                              </div>
                          <br>
                              <div class="row">
                                 <div class="col-lg-3">
-                                  <input type="submit" class="btn btn-info btn-user btn-block" value="Summit">
+                                  <input type="submit" class="btn btn-info btn-user btn-block" value="Submit">
                                 </div>
 
                             </div>

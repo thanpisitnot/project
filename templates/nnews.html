@@ -44,9 +44,15 @@
       <div id="content">
 
         <!-- Topbar -->
-        {% block navbar %}
-        {% include "base/navbar.html" %}
-        {% endblock %}
+        {% if usertype == 'Admin' %}
+          {% block navbara %}
+          {% include "base/navbara.html" %}
+          {% endblock %}
+        {% else %}
+          {% block navbar%}
+          {% include "base/navbar.html" %}
+          {% endblock %}
+        {% endif %}
         <!-- End of Topbar -->
 
 
@@ -81,7 +87,7 @@
                    <br>
                    <div class="row">
                      <div class="col-lg-3">
-                       TOPIC :
+                       Topic :
                      </div>
                      <div class ='col-lg-9'>
                        {{ data['TOPIC'] }}
@@ -90,7 +96,7 @@
                    <br>
                      <div class="row">
                      <div class="col-lg-3">
-                       DETAIL :
+                       Details :
                      </div>
                      <div class ='col-lg-9'>
                        {{ data['DETAIL'] }}
@@ -99,7 +105,7 @@
                    <br>
                    <div class="row">
                      <div class="col-lg-3">
-                       NAME :
+                       Name :
                      </div>
                      <div class ='col-lg-9'>
                        {{ data['NAME'] }}
@@ -108,34 +114,34 @@
                    <br>
                    <div class="row">
                      <div class="col-lg-3">
-                       SURNAME :
+                       Surname :
                      </div>
                      <div class ='col-lg-9'>
                        {{ data['SURNAME'] }}
                      </div>
                    </div>
                    <br>
+<!--                   <div class="row">-->
+<!--                     <div class="col-lg-3">-->
+<!--                       ACTIVE :-->
+<!--                     </div>-->
+<!--                     <div class ='col-lg-9'>-->
+<!--                       {{ data['ACTIVE'] }}-->
+<!--                     </div>-->
+<!--                   </div>-->
+<!--                   <br>-->
+<!--                   <div class="row">-->
+<!--                     <div class="col-lg-3">-->
+<!--                       USERNAME :-->
+<!--                     </div>-->
+<!--                     <div class ='col-lg-9'>-->
+<!--                       {{ data['USERNAME'] }}-->
+<!--                     </div>-->
+<!--                   </div>-->
+<!--                   <br>-->
                    <div class="row">
                      <div class="col-lg-3">
-                       ACTIVE :
-                     </div>
-                     <div class ='col-lg-9'>
-                       {{ data['ACTIVE'] }}
-                     </div>
-                   </div>
-                   <br>
-                   <div class="row">
-                     <div class="col-lg-3">
-                       USERNAME :
-                     </div>
-                     <div class ='col-lg-9'>
-                       {{ data['USERNAME'] }}
-                     </div>
-                   </div>
-                   <br>
-                   <div class="row">
-                     <div class="col-lg-3">
-                       DEPART :
+                       Depart :
                      </div>
                      <div class ='col-lg-9'>
                        {{ data['DEPART'] }}
@@ -144,13 +150,21 @@
                    <br>
                    <div class="row">
                      <div class="col-lg-3">
-                       TYPE NAME :
+                       News Type :
                      </div>
                      <div class ='col-lg-9'>
                        {{ data['TYPE_NAME'] }}
                      </div>
                    </div>
-
+<!--                     <br>-->
+<!--                   <div class="row">-->
+<!--                       <div class ="col-lg-3">-->
+<!--                          {% if usertype=='Admin' %}<a href="/f" class="btn btn-info btn-user btn-block" Edit>-->
+<!--                                                    <span class="text">Edit</span></a>-->
+<!--                           {% else %}-->
+<!--                          {% endif %}-->
+<!--                       </div>-->
+<!--                   </div>-->
                  </div>
              </div>
           </div>

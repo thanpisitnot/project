@@ -56,7 +56,7 @@
         <div class="container-fluid">
 
           <!-- Page Heading -->
-          <h1 class="h3 mb-4 text-gray-800">User info</h1>
+          <h1 class="h3 mb-4 text-gray-800">User Info</h1>
 
         </div>
         <!-- /.container-fluid -->
@@ -66,16 +66,14 @@
           <div class="col-lg-10">
             <div class="card shadow mb-4">
               <div class="card-header py-3">
-                <h6 class="m-0 font-weight-bold text-primary">Data User</h6>
+                <h6 class="m-0 font-weight-bold text-primary"></h6>
               </div>
               <div class="card-body">
                 <div class="row">
                   <div class="col-lg-3">
                     NAME :
                   </div>
-                  <div class="col-lg-9">
-                    {{ data['NAME'] }}
-                  </div>
+                  {{ data['NAME'] }}
                 </div>
                 <br>
                 <div class="row">
@@ -107,11 +105,17 @@
                 </div>
                 <br>
                 <div class="row">
-                  <div class="col-lg-3">
-                    WORKHOURS :
-                  </div>
-                   {{data['WORK_HOURS']}}
-                </div>
+                  <div class="col-lg-2">
+                <a href="/updateuser" class="btn btn-info btn-user btn-block" Edit>
+                  <span class="text">Edit</span></a>
+                   </div>
+                 </div>
+<!--                <div class="row">-->
+<!--                  <div class="col-lg-3">-->
+<!--                    WORKHOURS :-->
+<!--                  </div>-->
+<!--                   {{data['WORK_HOURS']}}-->
+<!--                </div>-->
 
               </div>
             </div>

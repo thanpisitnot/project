@@ -39,8 +39,8 @@
       <div id="content">
 
         <!-- Topbar -->
-        {% block navbar %}
-        {% include "base/navbar.html" %}
+        {% block navbara %}
+        {% include "base/navbara.html" %}
         {% endblock %}
         <!-- End of Topbar -->
 
@@ -60,26 +60,26 @@
             </div>
             <div class="card-body">
               <div class="table-responsive">
-                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                <table class="table table-bordered" id="dataTable2" width="100%" cellspacing="0">
                   <thead>
                     <tr>
                       <th>ID</th>
+                      <th>Name</th>
                       <th>Salary</th>
-                      <th>Remuneration</th>
-                      <th>Datecompen</th>
+                      <th>Compensation</th>
+                      <th>Date</th>
                       <th>Work Hours</th>
-                      <th>ID User</th>
                       <th></th>
                     </tr>
                   </thead>
                    <tfoot>
                     <tr>
                       <th>ID</th>
+                      <th>Name</th>
                       <th>Salary</th>
-                      <th>Remuneration</th>
-                      <th>Date compen</th>
+                      <th>Compensation</th>
+                      <th>Date</th>
                       <th>Work Hours</th>
-                      <th>ID User</th>
                       <th></th>
                     </tr>
                   </tfoot>
@@ -93,11 +93,11 @@
                       <td> {{ row[4] }}</td>
                       <td> {{ row[5] }}</td>
                       <td>
-                          <a href="/updatecompen/{{ row[0] }}" class="btn btn-primary btn-circle  btn-sm">
-                              <i class="fas fa-check"></i>
+                          <a href="/updatecompen/{{ row[0] }}" class="btn btn-outline-warning">
+                              <span>Edit</span>
                            </a>
-                           <a href="/comdetail/{{ row[0] }}" class="btn btn-info btn-circle btn-sm">
-                            <i class="fas fa-info-circle"></i>
+                           <a href="/comdetail/{{ row[0] }}" class="btn btn-outline-info">
+                             <span>Details</span>
                            </a>
 <!--                           <a href="/deletecompen/{{ row[0] }}" class="btn btn-primary btn-circle btn-sm">-->
 <!--                            <i class="fas fa-trash"></i>-->
@@ -167,6 +167,15 @@
   {% include "base/endjs.html" %}
   {% endblock %}
 
+<script>
+$(document).ready(function() {
+    $('#dataTable2').DataTable( {
+        "scrollY":        "300px",
+        "scrollCollapse": true,
+        "paging":         false
+    } );
+} );
+</script>
 
 </body>
 

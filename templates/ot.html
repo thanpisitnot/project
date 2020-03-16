@@ -40,8 +40,8 @@
       <div id="content">
 
         <!-- Topbar -->
-        {% block navbar %}
-        {% include "base/navbar.html" %}
+        {% block navbara %}
+        {% include "base/navbara.html" %}
         {% endblock %}
         <!-- End of Topbar -->
 
@@ -52,7 +52,7 @@
         <div class="container-fluid">
 
           <!-- Page Heading -->
-          <h1 class="h3 mb-4 text-gray-800">OT</h1>
+          <h1 class="h3 mb-4 text-gray-800">Over Time</h1>
 
   <!-- DataTales Example -->
           <div class="card shadow mb-4">
@@ -75,7 +75,7 @@
 <!--                      <th>Work Hours</th>-->
 <!--                      <th>Remuneration</th>-->
                        <th>OverTime</th>
-                        <th>TotalTime</th>
+<!--                        <th>TotalTime</th>-->
                         <th>TotalCompensation</th>
 
                     </tr>
@@ -91,7 +91,7 @@
 <!--                      <th>WorkHours</th>-->
 <!--                      <th>Remuneration</th>-->
                        <th>OverTime</th>
-                        <th>TotalTime</th>
+<!--                        <th>TotalTime</th>-->
                         <th>TotalCompensation</th>
 
                     </tr>
@@ -108,7 +108,7 @@
 <!--                      <td> {{ row[6] }}</td>-->
 <!--                      <td> {{ row[7] }}</td>-->
                       <td> {{ row[8] }}</td>
-                      <td> {{ row[9] }}</td>
+<!--                      <td> {{ row[9] }}</td>-->
                       <td> {{ row[10] }}</td>
                     </tr>
                   {% endfor %}
@@ -175,11 +175,14 @@
   {% endblock %}
 
 <script>
-  $('#dataTable2').dataTable( {
-  "columnDefs": [
-    { "width": "50%", "targets": 3},{ "width": "50%", "targets": 4}
-  ]
-} );
+$(document).ready(function() {
+  $('#dataTable2').DataTable( {
+        "scrollY":        "300px",
+        "scrollCollapse": true,
+        "paging":         false,
+        "order": []
+   });
+});
 </script>
 </body>
 

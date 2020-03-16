@@ -44,9 +44,15 @@
       <div id="content">
 
         <!-- Topbar -->
-        {% block navbar %}
-        {% include "base/navbar.html" %}
-        {% endblock %}
+        {% if usertype == 'Admin' %}
+          {% block navbara %}
+          {% include "base/navbara.html" %}
+          {% endblock %}
+        {% else %}
+          {% block navbar%}
+          {% include "base/navbar.html" %}
+          {% endblock %}
+        {% endif %}
         <!-- End of Topbar -->
 
 
@@ -56,7 +62,7 @@
         <div class="container-fluid">
 
           <!-- Page Heading -->
-          <h1  class="h3 mb-4 text-gray-800">News Page</h1>
+          <h1  class="h3 mb-4 text-gray-800">News</h1>
 
 
         </div>
@@ -67,39 +73,42 @@
           <div class="col-lg-10">
             <form class="card shadow mb-4" action="insertnews" method="post">
               <div class="card-header py-3">
-                <h6 class="m-0 font-weight-bold text-primary">News</h6>
+                <h6 class="m-0 font-weight-bold text-primary"></h6>
               </div>
+              <br>
               <div class="row">
-                <div class="card-body">
-                  <div class="col-lg-12">
-                   <input type ="username" class="form-control" id="news" name="topic" placeholder="Topic">
-                  </div>
+                  &nbsp;&nbsp;
+                <div class="col-sm-1">
+                    Topic :
                 </div>
-                 <div class = "card-body">
                   <div class="col-lg-5">
+                   <input type ="username" class="form-control" id="news" name="topic" placeholder="Topic"required>
+                  </div>
+                <div class="col-lg-1">
+                     News :
+                </div>
+                  <div class="col-lg-2">
                     <div class="dropdown">
                       <select class="form-control" name="typenews">
-                        <option value="1">ด่วน</option>
-                        <option value="2">ด่วนมาก</option>
-                        <option value="3">ปกติ</option>
+                        <option value="1">ปกติ</option>
+                        <option value="2">ด่วน</option>
+                        <option value="3">ด่วนมาก</option>
                       </select>
                     </div>
-<!--                  </div>-->
                    </div>
                 </div>
-              </div>
               <div class="row">
                <div class="card-body">
                 <div class="form-group">
                   <label for="comment"></label>
-                    <textarea class="form-control"  rows="5" id="comment" name="comment" placeholder="Detail"></textarea>
+                    <textarea class="form-control"  rows="5" id="comment" name="comment" placeholder="Details"required></textarea>
                 </div>
                </div>
               </div>
               <div class="row">
                 <div class="card-body">
                 <div class="col-lg-2">
-                <input type="submit" class="btn btn-info btn-user btn-block" value="summit">
+                <input type="submit" class="btn btn-info btn-user btn-block" value="Submit">
                 </div>
               </div>
                 </div>

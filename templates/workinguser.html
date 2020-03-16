@@ -57,7 +57,7 @@
         <div class="container-fluid">
 
           <!-- Page Heading -->
-          <h1 class="h3 mb-4 text-gray-800">Working</h1>
+          <h1 class="h3 mb-4 text-gray-800"> Table Working</h1>
 
   <!-- DataTales Example -->
           <div class="card shadow mb-4">
@@ -66,22 +66,22 @@
             </div>
             <div class="card-body">
               <div class="table-responsive">
-                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                <table class="table table-bordered" id="dataTable2" width="100%" cellspacing="0">
                   <thead>
                     <tr>
                       <th>ID Row</th>
-                      <th>ID Employee</th>
-                      <th>Starttime</th>
-                      <th>Endtime</th>
+<!--                      <th>ID Employee</th>-->
+                      <th>Start Time</th>
+                      <th>End Time</th>
 <!--                      <th></th>-->
                     </tr>
                   </thead>
                    <tfoot>
                     <tr>
                        <th>ID Row</th>
-                      <th>ID Employee</th>
-                      <th>Starttime</th>
-                      <th>Endtime</th>
+<!--                      <th>ID Employee</th>-->
+                      <th>Start Time</th>
+                      <th>End Time</th>
 <!--                      <th></th>-->
                     </tr>
                   </tfoot>
@@ -89,7 +89,7 @@
                   {% for row in rows %}
                     <tr>
                       <td> {{ row[0] }}</td>
-                      <td> {{ row[1] }}</td>
+<!--                      <td> {{ row[1] }}</td>-->
                       <td> {{ row[2] }}</td>
                       <td> {{ row[3] }}</td>
 <!--                      <td>-->
@@ -162,6 +162,16 @@
   {% include "base/endjs.html" %}
   {% endblock %}
 
+<script>
+$(document).ready(function() {
+  $('#dataTable2').DataTable( {
+        "scrollY":        "300px",
+        "scrollCollapse": true,
+        "paging":         false,
+        "order": []
+   });
+});
+</script>
 
 </body>
 

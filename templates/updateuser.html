@@ -26,9 +26,15 @@
   <div id="wrapper">
 
     <!-- Sidebar -->
-    {% block Sidebar %}
-    {% include "base/sidebar.html" %}
-    {% endblock %}
+    {% if usertype=='Admin' %}
+        {% block Sidebar1 %}
+        {% include "base/sidebar.html" %}
+        {% endblock %}
+    {% else %}
+        {% block Sidebar2 %}
+        {% include "base/sidebaruser.html" %}
+        {% endblock %}
+    {% endif %}
     <!-- End of Sidebar -->
 
     <!-- Content Wrapper -->
@@ -38,9 +44,15 @@
       <div id="content">
 
         <!-- Topbar -->
-        {% block navbar %}
-        {% include "base/navbar.html" %}
-        {% endblock %}
+        {% if usertype == 'Admin' %}
+          {% block navbara %}
+          {% include "base/navbara.html" %}
+          {% endblock %}
+        {% else %}
+          {% block navbar%}
+          {% include "base/navbar.html" %}
+          {% endblock %}
+        {% endif %}
         <!-- End of Topbar -->
 
 
@@ -60,23 +72,29 @@
           <div class="col-lg-10">
             <div class="card shadow mb-4">
               <div class="card-header py-3">
-                <h6 class="m-0 font-weight-bold text-primary">update</h6>
+                <h6 class="m-0 font-weight-bold text-primary"></h6>
               </div>
                 <form class="insert" action="{{link}}" method="post">
                   <div class="card-body">
                          <div class="row">
                            <div class="col-lg-3">
-                               <input type="iduser" class="form-control form-control-user" name ="iduser" value="{{ data['ID'] }}" placeholder="ID  ">
+                               <input type="hidden" class="form-control form-control-user" name ="iduser" value="{{ data['ID'] }}" readonly placeholder="ID  ">
                            </div>
                          </div>
                          <br>
                              <div class="row">
+                                 <div class="col-lg-2">
+                                     Name :
+                                 </div>
                                  <div class="col-lg-3">
                                      <input type="name" class="form-control form-control-user" name ="name" value="{{ data['NAME'] }}" placeholder="Name">
                                  </div>
                              </div>
                          <br>
                              <div class="row">
+                                 <div class="col-lg-2">
+                                     Surname :
+                                 </div>
                                  <div class="col-lg-3">
                                      <input type="surname" class="form-control form-control-user" name ="surname" value="{{ data['SURNAME'] }}" placeholder="Surname">
                                  </div>
@@ -84,31 +102,40 @@
                          <br>
                              <div class="row">
                                  <div class="col-lg-3">
-                                     <input type="active" class="form-control form-control-user" name ="active" value="{{ data['ACTIVE'] }}" readonly placeholder="Active">
+                                     <input type="hidden" class="form-control form-control-user" name ="active" value="{{ data['ACTIVE'] }}" readonly placeholder="Active">
                                  </div>
                              </div>
-                         <br>
+<!--                         <br>-->
                              <div class="row">
                                  <div class="col-lg-3">
-                                     <input type="usern" class="form-control form-control-user" name ="usern" value="{{ data['USERNAME'] }}" placeholder="Username">
+                                     <input type="hidden" class="form-control form-control-user" name ="usern" value="{{ data['USERNAME'] }}" readonly placeholder="Username">
                                  </div>
                              </div>
-                         <br>
+<!--                         <br>-->
                              <div class="row">
+                                 <div class="col-lg-2">
+                                     Address :
+                                 </div>
                                  <div class="col-lg-3">
                                      <input type="address" class="form-control form-control-user" name ="address" value="{{ data['ADDRESS'] }}" placeholder="Address">
                                  </div>
                              </div>
-                         <br>
+<!--                         <br>-->
                              <div class="row">
                                  <div class="col-lg-3">
-                                     <input type="depart" class="form-control form-control-user" name ="depart" value="{{ data['DEPART'] }}"  placeholder="Depart">
+                                     <input type="hidden" class="form-control form-control-user" name ="depart" value="{{ data['DEPART'] }}"  placeholder="Depart">
+                                 </div>
+                             </div>
+<!--                         <br>-->
+                             <div class="row">
+                                 <div class="col-lg-3">
+                                     <input type="hidden" class="form-control form-control-user" name ="depart" value="{{ data['LEVELTYPE'] }}" readonly placeholder="LevelType">
                                  </div>
                              </div>
                          <br>
                              <div class="row">
                                 <div class="col-lg-3">
-                                  <input type="submit" class="btn btn-primary btn-user btn-block" value="Summit">
+                                  <input type="submit" class="btn btn-info btn-user btn-block" value="Submit">
                                 </div>
                             </div>
                       </div>

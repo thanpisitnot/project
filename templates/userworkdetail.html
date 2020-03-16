@@ -38,8 +38,8 @@
       <div id="content">
 
         <!-- Topbar -->
-        {% block navbar %}
-        {% include "base/navbar.html" %}
+        {% block navbara %}
+        {% include "base/navbara.html" %}
         {% endblock %}
         <!-- End of Topbar -->
 
@@ -50,7 +50,7 @@
         <div class="container-fluid">
 
           <!-- Page Heading -->
-          <h1 class="h3 mb-4 text-gray-800">USER WORKING</h1>
+          <h1 class="h3 mb-4 text-gray-800">User Working</h1>
 
         </div>
         <!-- /.container-fluid -->
@@ -60,13 +60,13 @@
           <div class="col-lg-10">
             <div class="card shadow mb-4">
               <div class="card-header py-3">
-                <h6 class="m-0 font-weight-bold text-primary">User Working</h6>
+                <h6 class="m-0 font-weight-bold text-primary"></h6>
               </div>
               <div class="card-body">
                  <div class="card-body">
                 <div class="row">
                   <div class="col-lg-3">
-                    ID_ROW :
+                    ID Row :
                   </div>
                   <div class="col-lg-9">
                     {{ data['ID_ROW'] }}
@@ -82,9 +82,18 @@
                      </div>
                    </div>
                    <br>
+                   <div class="row">
+                     <div class="col-lg-3">
+                       Name :
+                     </div>
+                     <div class ='col-lg-9'>
+                       {{ data['NAME'] }}
+                     </div>
+                   </div>
+                   <br>
                      <div class="row">
                      <div class="col-lg-3">
-                       USERNAME :
+                       Username :
                      </div>
                      <div class ='col-lg-9'>
                        {{ data['USERNAME'] }}
@@ -93,7 +102,7 @@
                    <br>
                    <div class="row">
                      <div class="col-lg-3">
-                       ACTIVE :
+                       Active :
                      </div>
                      <div class ='col-lg-9'>
                        {{ data['ACTIVE'] }}
@@ -102,7 +111,7 @@
                    <br>
                    <div class="row">
                      <div class="col-lg-3">
-                       DEPART :
+                       Depart :
                      </div>
                      <div class ='col-lg-9'>
                        {{ data['DEPART'] }}
@@ -111,7 +120,7 @@
                    <br>
                    <div class="row">
                      <div class="col-lg-3">
-                       LEVEL TYPE :
+                       Level Type :
                      </div>
                      <div class ='col-lg-9'>
                        {{ data['LEVELTYPE'] }}
@@ -120,7 +129,7 @@
                    <br>
                    <div class="row">
                      <div class="col-lg-3">
-                       STARTTIME :
+                       Start Time :
                      </div>
                      <div class ='col-lg-9'>
                        {{ data['STARTTIME'] }}
@@ -129,7 +138,7 @@
                    <br>
                    <div class="row">
                      <div class="col-lg-3">
-                       ENDTIME :
+                       End Time :
                      </div>
                      <div class ='col-lg-9'>
                        {{ data['ENDTIME'] }}
