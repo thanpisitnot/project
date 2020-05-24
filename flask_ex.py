@@ -20,7 +20,6 @@ PASS = 'mee0886203137'
 DB_URL = '203.158.131.65:1521/usfm'
 # DB_URL = '10.10.100.65:1521/usfm'
 
-
 # con = cx_Oracle.connect('pythonhol/welcome@127.0.0.1/orcl')
 # print(con.version)
 
